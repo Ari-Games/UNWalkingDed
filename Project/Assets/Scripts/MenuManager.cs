@@ -13,10 +13,6 @@ namespace Assets.Scripts
         [SerializeField] private Sprite offSpriteSound;
         [SerializeField] private Sprite onSpriteSound;
         private bool isPlaySound = true;
-        void Start()
-        {
-
-        }
 
         public void ChangeStateSound()
         {

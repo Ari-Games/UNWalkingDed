@@ -17,6 +17,7 @@ public class BulletLogic : MonoBehaviour
             return;
         var expl = Instantiate(exploseParticle, collision.transform.position, Quaternion.identity);
         expl.GetComponent<ParticleSystem>().Play();
+        Destroy(expl, 1f);
         if (collision.tag != "Zombie" && collision.tag != "FatZombie")
         {
             return;
@@ -25,7 +26,6 @@ public class BulletLogic : MonoBehaviour
         splash.GetComponent<ParticleSystem>().Play();
 
         Debug.Log("EXPLOSE");
-        Destroy(expl,1f);
         Destroy(splash, 0.5f);
         Destroy(this.gameObject);
     }
