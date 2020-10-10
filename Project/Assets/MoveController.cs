@@ -19,46 +19,37 @@ public class MoveController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
+
+    }
+    
+    private void Update()
+    {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (_flag)
         {
             arrow.DrawArrow(transform.position, mousePos);
         }
-        if (Input.GetMouseButtonDown(0))
-        {            
+        if (Input.GetMouseButtonDown(0) && !_flag)
+        {
+            Debug.Log("DOWN " + _flag);
             _flag = true;
             _from = mousePos;
-            //Debug.Log(direction);
+
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            Debug.Log("UP " + _flag);
             _to = mousePos;
             _flag = false;
+
             Vector2 direction = _to - _from;
             Debug.Log(direction);
             _rigidbody.AddForce(-direction * 1000);
             arrow.StopDraw();
         }
-        
-       
+
 
     }
-    private void OnMouseDown()
-    {
-        _from = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(_from);
-    }
-    private void OnMouseUp()
-    {
-        _to = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //arrow.DrawArrow(transform.position, (_to - _from) + transform.position);
-        Vector2 direction = _to -  _from;
-        Debug.Log(direction);
-        _rigidbody.AddForce(-direction * 1000);
-    }
-    private void Update()
-    {
-            
-    }
-    
+
 }
