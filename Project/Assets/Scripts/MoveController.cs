@@ -16,6 +16,7 @@ public class MoveController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] ArrowDraw arrow;
     [SerializeField] Rigidbody2D bullet;
+    [SerializeField] GameObject heroSprite;
     private void Start()
     {
         arrow.StopDraw();
@@ -28,6 +29,11 @@ public class MoveController : MonoBehaviour
         if (_flag)
         {
             arrow.DrawArrow(transform.position, mousePos);
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            diff.Normalize();
+
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            heroSprite.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         }
         if (Input.GetMouseButtonDown(0) && !_flag)
         {
@@ -55,16 +61,15 @@ public class MoveController : MonoBehaviour
         var bulletInstance = Instantiate(bullet,transform.position,Quaternion.identity);
         //bulletInstance.transform.LookAt(direction);
         ///////////////////////////////
-
+        //HACK:
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         diff.Normalize();
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         bulletInstance.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         //////////////////////////////
-        //bulletInstance.transform.rotation = Quaternion.LookRotation(direction);
         bulletInstance.AddForce(direction * 100);
-        Destroy(bulletInstance.gameObject, 4);
+        Destroy(bulletInstance.gameObject,0.5f );
         
     }
 }
