@@ -13,6 +13,7 @@ namespace Assets.Scripts
         [SerializeField] private Sprite offSpriteSound;
         [SerializeField] private Sprite onSpriteSound;
         [SerializeField] private Text textCoins;
+        [SerializeField] private GameObject shop;
         private bool isPlaySound = true;
 
         private void Start()
@@ -39,6 +40,16 @@ namespace Assets.Scripts
         public void Play()
         {
             SceneManager.LoadScene(1);
+        }
+
+        public void ToShop()
+        {
+            shop.SetActive(true);
+        }
+
+        public void ToBack()
+        {
+            shop.SetActive(false);
         }
     }
 }
