@@ -17,6 +17,9 @@ public class MoveController : MonoBehaviour
     [SerializeField] ArrowDraw arrow;
     [SerializeField] Rigidbody2D bullet;
     [SerializeField] GameObject heroSprite;
+
+    public float speed = 100f;
+
     private void Start()
     {
         arrow.StopDraw();
@@ -68,8 +71,8 @@ public class MoveController : MonoBehaviour
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         bulletInstance.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         //////////////////////////////
-        bulletInstance.AddForce(direction * 100);
-        Destroy(bulletInstance.gameObject,0.5f );
+        bulletInstance.AddForce(direction * speed);
+        Destroy(bulletInstance.gameObject, 0.5f);
         
     }
 }
