@@ -47,7 +47,7 @@ public class BezierMover : MonoBehaviour
         point3 = new Vector2(point2.x * 2, point2.y);
         tParamSlider += 0.1f;
         Vector2 dist = Bezier.GetPos(transform.position, point2, point3, point4.position, tParamSlider);
-        transform.position = Vector2.Lerp(transform.position,dist,Time.deltaTime*2);
+        transform.position = Vector2.Lerp(transform.position,dist,Time.deltaTime*2.5f);
        // transform.rotation = Quaternion.LookRotation(Bezier.GetRot(transform.position, point2,
           //          point3, point4.position, tParamSlider));
     }
