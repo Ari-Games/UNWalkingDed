@@ -10,7 +10,7 @@ public class Grenade : MonoBehaviour
     void FixedUpdate()
     {
         Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
-        if(collider && collider.gameObject != gameObject || Vector2.Distance(transform.position, target) <0.5f)
+        if(collider && collider.gameObject != gameObject || Vector2.Distance(transform.position, target) < 0.5f)
         {
             Explosion();
             Destroy(gameObject,2f);
@@ -27,7 +27,7 @@ public class Grenade : MonoBehaviour
             if (rb && rb.gameObject != gameObject)
             {
                 print(gameObject.name);
-                rb.AddExplosionForce(1000f, transform.position, 5f);
+                rb.AddExplosionForce(300f, transform.position, 10f);
             }
         }
     }
