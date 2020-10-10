@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -33,8 +34,8 @@ public class GameManager : MonoBehaviour
             money += countOfCoin;
             PlayerPrefs.SetInt("Money", money);
             PlayerPrefs.Save();
-            //TODO
-            //NextScene GameOver
+
+            SceneManager.LoadScene(2);
             print("!!!!");
         }
     }

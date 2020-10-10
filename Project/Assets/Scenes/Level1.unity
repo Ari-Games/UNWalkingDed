@@ -65243,14 +65243,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 913602369}
     m_Modifications:
-    - target: {fileID: 3145185990613780803, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
-      propertyPath: m_Mass
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3145185990613780803, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4047578548659143040, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.834871
@@ -75443,14 +75435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 913602369}
     m_Modifications:
-    - target: {fileID: 3145185990613780803, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
-      propertyPath: m_Mass
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3145185990613780803, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4047578548659143040, guid: 79adc55df163c3e4da5906e95b496995, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.284872
