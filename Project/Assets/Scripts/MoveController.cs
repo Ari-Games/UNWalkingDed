@@ -69,7 +69,7 @@ public class MoveController : MonoBehaviour
         bulletInstance.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         //////////////////////////////
         bulletInstance.AddForce(direction * 100);
-        Destroy(bulletInstance.gameObject, 4);
+        Destroy(bulletInstance.gameObject,0.5f );
         
     }
 }

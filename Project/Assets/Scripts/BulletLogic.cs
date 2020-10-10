@@ -19,7 +19,8 @@ public class BulletLogic : MonoBehaviour
         var expl = Instantiate(exploseParticle.gameObject, collision.transform);
         expl.GetComponent<ParticleSystem>().Play();
         Debug.Log("EXPLOSE");
-        Destroy(expl, 1);
+        Destroy(expl,1f);
+        Destroy(this.gameObject);
     }
     // Update is called once per frame
     void Update()
