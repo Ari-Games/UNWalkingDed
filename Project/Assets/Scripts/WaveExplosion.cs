@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaveExplosion : MonoBehaviour
 {
     [SerializeField] private float timeExplosion;
+    [SerializeField] private GameObject coin = null;
     public void Start()
     {
         transform.localScale = new Vector3(3, 3, 1);
@@ -14,7 +15,11 @@ public class WaveExplosion : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Zombie" || collision.gameObject.tag == "FatZombie")
-            Destroy(collision.gameObject);
+           {
+                Destroy(collision.gameObject);
+                if(Random.Range(1,4)==1)
+                    Instantiate(coin,transform.position,Quaternion.identity);
+           } 
     }
 
 }

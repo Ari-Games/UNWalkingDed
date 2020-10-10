@@ -13,6 +13,7 @@ public class MoveController : MonoBehaviour
     bool _flag;
     Vector3 _from;
     Vector3 _to;
+    Animator _animation;
     [Header("Settings")]
     [SerializeField] ArrowDraw arrow;
     [SerializeField] Rigidbody2D bullet;
@@ -20,7 +21,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] Transform aim;
     private void Start()
     {
-        
+        _animation = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
     
@@ -31,13 +32,12 @@ public class MoveController : MonoBehaviour
         mousePos.z = 0;
         if (_flag)
         {
-            
             arrow.DrawArrow(transform.position, mousePos);
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
 
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            heroSprite.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+            heroSprite.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
             aim.position = mousePos;
         }
@@ -50,7 +50,7 @@ public class MoveController : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-         
+            _animation.SetTrigger("shoot");
             _to = mousePos;
             _flag = false;
             aim.gameObject.SetActive(false);
@@ -58,8 +58,6 @@ public class MoveController : MonoBehaviour
             _rigidbody.AddForce(-direction * 1000);
             FireByDirection(direction);
         }
-        
-
     }
 
     private void FireByDirection(Vector2 direction)

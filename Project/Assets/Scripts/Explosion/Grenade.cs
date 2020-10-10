@@ -9,25 +9,25 @@ public class Grenade : MonoBehaviour
     // Start is called before the first frame update
     void FixedUpdate()
     {
-        Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
-        if(collider && collider.gameObject != gameObject || Vector2.Distance(transform.position, target) <0.5f)
-        {
-            Explosion();
-            Destroy(gameObject,2f);
-        }
+        // Collider2D collider = Physics2D.OverlapCircle(transform.position, 5f);
+        // if(collider && collider.gameObject != gameObject || Vector2.Distance(transform.position, target) < 0.5f)
+        // {
+        //     Explosion();
+        //     Destroy(gameObject,2f);
+        // }
+        Explosion();
     }
 
     private void Explosion()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 5f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 10f);
         foreach (var hit in colliders)
         {
             print(hit.name);
             var rb = hit.GetComponent<Rigidbody2D>();
             if (rb && rb.gameObject != gameObject)
             {
-                print(gameObject.name);
-                rb.AddExplosionForce(1000f, transform.position, 5f);
+                rb.AddExplosionForce(300f, transform.position, 10f);
             }
         }
     }
