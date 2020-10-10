@@ -17,28 +17,35 @@ public class MoveController : MonoBehaviour
     [SerializeField] ArrowDraw arrow;
     [SerializeField] Rigidbody2D bullet;
     [SerializeField] GameObject heroSprite;
+    [SerializeField] Transform aim;
     private void Start()
     {
-        arrow.StopDraw();
+        
         _rigidbody = GetComponent<Rigidbody2D>();
     }
     
     private void Update()
     {
+        
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
         if (_flag)
         {
+            
             arrow.DrawArrow(transform.position, mousePos);
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
 
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             heroSprite.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+
+            aim.position = mousePos;
         }
         if (Input.GetMouseButtonDown(0) && !_flag)
         {
             _flag = true;
             _from = mousePos;
+            aim.gameObject.SetActive(true);
 
         }
         else if (Input.GetMouseButtonUp(0))
@@ -46,13 +53,12 @@ public class MoveController : MonoBehaviour
          
             _to = mousePos;
             _flag = false;
-
+            aim.gameObject.SetActive(false);
             Vector2 direction = _to - _from;
             _rigidbody.AddForce(-direction * 1000);
-            arrow.StopDraw();
             FireByDirection(direction);
         }
-
+        
 
     }
 
@@ -61,7 +67,6 @@ public class MoveController : MonoBehaviour
         var bulletInstance = Instantiate(bullet,transform.position,Quaternion.identity);
         //bulletInstance.transform.LookAt(direction);
         ///////////////////////////////
-        //HACK:
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         diff.Normalize();
 

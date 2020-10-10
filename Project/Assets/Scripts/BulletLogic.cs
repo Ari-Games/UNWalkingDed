@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletLogic : MonoBehaviour
 {
     [SerializeField] ParticleSystem exploseParticle;
+    [SerializeField] ParticleSystem bloodSplash;
     void Start()
     {
         
@@ -18,8 +19,12 @@ public class BulletLogic : MonoBehaviour
         }
         var expl = Instantiate(exploseParticle.gameObject, collision.transform);
         expl.GetComponent<ParticleSystem>().Play();
+        var splash = Instantiate(bloodSplash.gameObject, collision.transform);
+        splash.GetComponent<ParticleSystem>().Play();
+
         Debug.Log("EXPLOSE");
         Destroy(expl,1f);
+        Destroy(splash, 0.5f);
         Destroy(this.gameObject);
     }
     // Update is called once per frame

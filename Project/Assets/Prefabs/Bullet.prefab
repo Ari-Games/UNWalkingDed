@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd122d501f4c6724e9d98394da86d0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exploseParticle: {fileID: 8622742576934491553, guid: bef5375988c2ad64ca751c1b43494910, type: 3}
+  exploseParticle: {fileID: 6633511116445083701, guid: eee3de574f694bd408209b7453e9e8f8, type: 3}
+  bloodSplash: {fileID: 136153609742514861, guid: cab7945f67db8cd4ab63e8461b23225b, type: 3}
 --- !u!1 &4636208918182844282
 GameObject:
   m_ObjectHideFlags: 0
