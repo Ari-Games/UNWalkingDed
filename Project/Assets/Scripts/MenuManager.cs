@@ -12,7 +12,13 @@ namespace Assets.Scripts
         [SerializeField] private Button sound;
         [SerializeField] private Sprite offSpriteSound;
         [SerializeField] private Sprite onSpriteSound;
+        [SerializeField] private Text textCoins;
         private bool isPlaySound = true;
+
+        private void Start()
+        {
+            textCoins.text = PlayerPrefs.GetInt("Money").ToString();
+        }
 
         public void ChangeStateSound()
         {

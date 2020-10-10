@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
         text.text = countOfCoin.ToString();
         if(!gameTime.timerIsRunning)
         {
+            int money = 0;
+            if (PlayerPrefs.HasKey("Money"))
+                money = PlayerPrefs.GetInt("Money");
+            money += countOfCoin;
+            PlayerPrefs.SetInt("Money", money);
+            PlayerPrefs.Save();
             //TODO
             //NextScene GameOver
             print("!!!!");
