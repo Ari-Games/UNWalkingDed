@@ -15,11 +15,12 @@ public class WaveExplosion : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Zombie" || collision.gameObject.tag == "FatZombie")
-           {
-                Destroy(collision.gameObject);
-                if(Random.Range(1,4)==1)
-                    Instantiate(coin,transform.position,Quaternion.identity);
-           } 
+        {
+            collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("kill");
+            Destroy(collision.gameObject,4f);
+            if(Random.Range(1,4)==1)
+                Instantiate(coin,transform.position,Quaternion.identity);
+        } 
     }
 
 }

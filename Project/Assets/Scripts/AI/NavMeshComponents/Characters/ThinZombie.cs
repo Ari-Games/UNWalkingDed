@@ -9,6 +9,9 @@ public class ThinZombie : MonoBehaviour
 
     [SerializeField]
     float distanceToHit = 1f;
+
+    [SerializeField]
+    Animator zombieInst;
     private void Start() {
 
         if(target == null)
@@ -30,7 +33,8 @@ public class ThinZombie : MonoBehaviour
     {
         //TODO 
         //Particle effect of Blood
-        Destroy(gameObject, 1f);
+        zombieInst.SetTrigger("kill");
+        Destroy(gameObject, 5f);
     }
     
 }   

@@ -14,6 +14,9 @@ public class FatZombie : MonoBehaviour
     [SerializeField]
     float timeToExplosion = 1f;
 
+    [SerializeField]
+    Animator zombieInst;
+
     public float health = 25f;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class FatZombie : MonoBehaviour
             agent.updateRotation = false;
             agent.updateUpAxis = false;
         }
+        
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class FatZombie : MonoBehaviour
             target.GetComponent<Ded>().TakeDamage(3);
         Destroy(gameObject, timeToExplosion);
         agent.isStopped = true;
+        zombieInst.SetTrigger("kill");
     }
 }
 
