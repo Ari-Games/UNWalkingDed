@@ -20,6 +20,8 @@ public class ZombieSpawnManager : MonoBehaviour
     [SerializeField]
     float timeSpawnFat = 3f;
 
+    
+
     [SerializeField]
     int countOfWave = 5;
 

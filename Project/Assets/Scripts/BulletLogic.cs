@@ -13,12 +13,14 @@ public class BulletLogic : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Player")
+            return;
+        var expl = Instantiate(exploseParticle, collision.transform.position, Quaternion.identity);
+        expl.GetComponent<ParticleSystem>().Play();
         if (collision.tag != "Zombie" && collision.tag != "FatZombie")
         {
             return;
         }
-        var expl = Instantiate(exploseParticle.gameObject, collision.transform);
-        expl.GetComponent<ParticleSystem>().Play();
         var splash = Instantiate(bloodSplash.gameObject, collision.transform);
         splash.GetComponent<ParticleSystem>().Play();
 
