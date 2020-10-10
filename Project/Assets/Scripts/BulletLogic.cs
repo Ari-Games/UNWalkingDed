@@ -6,10 +6,6 @@ public class BulletLogic : MonoBehaviour
 {
     [SerializeField] ParticleSystem exploseParticle;
     [SerializeField] ParticleSystem bloodSplash;
-    void Start()
-    {
-        
-    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,9 +25,11 @@ public class BulletLogic : MonoBehaviour
         Destroy(splash, 0.5f);
         Destroy(this.gameObject);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    private void OnDestroy() {
+        var expl = Instantiate(exploseParticle, transform.position, Quaternion.identity);
+        expl.GetComponent<ParticleSystem>().Play();
+        Destroy(expl, 1f);
     }
+  
 }
