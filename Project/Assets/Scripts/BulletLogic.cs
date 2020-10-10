@@ -9,12 +9,12 @@ public class BulletLogic : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
             return;
         var expl = Instantiate(exploseParticle, collision.transform.position, Quaternion.identity);
         expl.GetComponent<ParticleSystem>().Play();
         Destroy(expl, 1f);
-        if (collision.tag != "Zombie" && collision.tag != "FatZombie")
+        if (!collision.CompareTag("Zombie") && !collision.CompareTag("FatZombie"))
         {
             return;
         }
