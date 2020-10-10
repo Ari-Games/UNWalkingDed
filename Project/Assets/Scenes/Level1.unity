@@ -406,6 +406,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6938426135214615588, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938426135327353924, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6938426136417327970, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -418,6 +426,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3301d7fc9ce21be409226a951f2ec8d1, type: 3}
+    - target: {fileID: 6938426136417327971, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
 --- !u!1 &258369521
@@ -27342,7 +27354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8031702936947088977, guid: ad6d5468ae476bf489d175adc724861e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8031702936947088977, guid: ad6d5468ae476bf489d175adc724861e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
