@@ -32,7 +32,6 @@ public class MoveController : MonoBehaviour
         mousePos.z = 0;
         if (_flag)
         {
-            
             arrow.DrawArrow(transform.position, mousePos);
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
@@ -59,8 +58,6 @@ public class MoveController : MonoBehaviour
             _rigidbody.AddForce(-direction * 1000);
             FireByDirection(direction);
         }
-        
-
     }
 
     private void FireByDirection(Vector2 direction)

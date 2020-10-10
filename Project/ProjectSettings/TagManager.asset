@@ -9,6 +9,7 @@ TagManager:
   - FatZombie
   - TallPoint
   - FatPoint
+  - Manager
   layers:
   - Default
   - TransparentFX

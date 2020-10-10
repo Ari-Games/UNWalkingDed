@@ -47,6 +47,8 @@ public class FatZombie : MonoBehaviour
     {
         //TODO
         //Call Particle effect and hit player if in area
+        if(Vector2.Distance(transform.position, target.position) <2f)
+            target.GetComponent<Ded>().TakeDamage(3);
         Destroy(gameObject, timeToExplosion);
         agent.isStopped = true;
     }
