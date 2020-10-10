@@ -4,39 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BezierMover : MonoBehaviour
-{
-    
-
+{ 
     Vector2 point2;
-
 
     Vector2 point3;
 
-
-    public Transform point4;
+    [SerializeField]
+    Transform point4 = null;
     
     float lenOfOX = 0f;
     float lenOfOY =0f;
     float tParamSlider = 0f;
-    // Start is called before the first frame update
    
-    // Update is called once per frame
+    GameManager gameManager = null;
 
-    private void Start() {
-         lenOfOX =   (point4.position.x - transform.position.x);
-         lenOfOY = (point4.position.y - transform.position.y);
-
+    private void Start()
+    {
+        point4 = GameObject.FindWithTag("Player").transform;
+        lenOfOX =   (point4.position.x - transform.position.x);
+        lenOfOY = (point4.position.y - transform.position.y);
+        gameManager = GameObject.FindWithTag("Manager").GetComponent<GameManager>();
         Mathf.Clamp01(tParamSlider);
-
-        
     }
 
     private void Update()
     {
-       if(Vector2.Distance(transform.position,point4.position) < 0.3f)
+       if(Vector2.Distance(transform.position,point4.position) < 0.5f)
         {
             Destroy(gameObject);
-            
+            if(gameManager)
+                gameManager.IncCountOfCount();
+
         }
         CoinMover();
     }
@@ -49,7 +47,7 @@ public class BezierMover : MonoBehaviour
         point3 = new Vector2(point2.x * 2, point2.y);
         tParamSlider += 0.1f;
         Vector2 dist = Bezier.GetPos(transform.position, point2, point3, point4.position, tParamSlider);
-        transform.position = Vector2.Lerp(transform.position,dist,Time.deltaTime*1);
+        transform.position = Vector2.Lerp(transform.position,dist,Time.deltaTime*2);
        // transform.rotation = Quaternion.LookRotation(Bezier.GetRot(transform.position, point2,
           //          point3, point4.position, tParamSlider));
     }
