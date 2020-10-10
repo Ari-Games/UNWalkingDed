@@ -12,6 +12,7 @@ namespace Flocking
         NavMeshAgent agent;
         private void Awake() {
             rigidbody = GetComponent<Rigidbody2D>();
+            
         }
         private void Start()
         {
