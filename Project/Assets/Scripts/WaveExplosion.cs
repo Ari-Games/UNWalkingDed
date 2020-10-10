@@ -16,9 +16,17 @@ public class WaveExplosion : MonoBehaviour
     {
         if (collision.gameObject.tag == "Zombie" || collision.gameObject.tag == "FatZombie")
         {
-            collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("kill");
-            Destroy(collision.gameObject,4f);
-            if(Random.Range(1,4)==1)
+            try
+            {
+                collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("kill");
+                
+            }
+            catch (System.Exception)
+            {
+                               
+            }
+            Destroy(collision.gameObject, 4f);
+            if (Random.Range(1,4)==1)
                 Instantiate(coin,transform.position,Quaternion.identity);
         } 
     }
