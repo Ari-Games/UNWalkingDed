@@ -19,15 +19,21 @@ public class MoveController : MonoBehaviour
     [SerializeField] Rigidbody2D bullet;
     [SerializeField] GameObject heroSprite;
     [SerializeField] Transform aim;
+    [SerializeField] private AudioSource explSound;
+
+    float timer = 0.4f;
+    [SerializeField]
+    float timeToShoot = 0.4f;
     private void Start()
     {
+        Mathf.Clamp(timer,0,timeToShoot);
         _animation = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
     
     private void Update()
     {
-        
+        timer += Time.deltaTime;
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         if (_flag)
@@ -48,8 +54,9 @@ public class MoveController : MonoBehaviour
             aim.gameObject.SetActive(true);
 
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && timer >= timeToShoot)
         {
+            timer = 0;
             _animation.SetTrigger("shoot");
             _to = mousePos;
             _flag = false;
@@ -63,6 +70,7 @@ public class MoveController : MonoBehaviour
     private void FireByDirection(Vector2 direction)
     {
         var bulletInstance = Instantiate(bullet,transform.position,Quaternion.identity);
+        StartCoroutine(PlaySwist());
         //bulletInstance.transform.LookAt(direction);
         ///////////////////////////////
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -72,7 +80,15 @@ public class MoveController : MonoBehaviour
         bulletInstance.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         //////////////////////////////
         bulletInstance.AddForce(direction * 100);
-        Destroy(bulletInstance.gameObject,0.5f );
+        Destroy(bulletInstance.gameObject, 0.5f );
         
+    }
+
+    IEnumerator PlaySwist()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
+        if (!explSound.isPlaying)
+            explSound.Play();
     }
 }
