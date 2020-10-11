@@ -23,6 +23,7 @@ public class WaveExplosion : MonoBehaviour
             if(collision.gameObject.tag == "Zombie")
             {
                 collision.gameObject.GetComponent<Flocking.Flock>().enabled = false;
+                Destroy(collision.gameObject.GetComponent<Collider2D>());
             }
             Destroy(collision.gameObject,4f);
             if(Random.Range(1,4)==1)
