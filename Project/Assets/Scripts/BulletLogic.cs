@@ -9,10 +9,15 @@ public class BulletLogic : MonoBehaviour
 
     private void Start()
     {
-        if (!GetComponent<AudioSource>().isPlaying)
-            GetComponent<AudioSource>().Play();
+        StartCoroutine(PlayMusic());
     }
 
+    IEnumerator PlayMusic()
+    {
+        if (!GetComponent<AudioSource>().isPlaying)
+            GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(2f);
+    }
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
