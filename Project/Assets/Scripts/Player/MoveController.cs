@@ -19,6 +19,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] Rigidbody2D bullet;
     [SerializeField] GameObject heroSprite;
     [SerializeField] Transform aim;
+    [SerializeField] private AudioSource explSound;
     private void Start()
     {
         _animation = GetComponent<Animator>();
@@ -73,7 +74,7 @@ public class MoveController : MonoBehaviour
         bulletInstance.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         //////////////////////////////
         bulletInstance.AddForce(direction * 100);
-        Destroy(bulletInstance.gameObject,0.5f );
+        Destroy(bulletInstance.gameObject, 0.5f );
         
     }
 
@@ -81,5 +82,7 @@ public class MoveController : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
+        if (!explSound.isPlaying)
+            explSound.Play();
     }
 }

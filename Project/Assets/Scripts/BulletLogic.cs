@@ -9,7 +9,7 @@ public class BulletLogic : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(PlayMusic());
+        //StartCoroutine(PlayMusic());
     }
 
     IEnumerator PlayMusic()
