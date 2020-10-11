@@ -6,7 +6,8 @@ public class BulletLogic : MonoBehaviour
 {
     [SerializeField] ParticleSystem exploseParticle;
     [SerializeField] ParticleSystem bloodSplash;
-    
+    [SerializeField] private AudioClip explosionSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" || collision.tag == "Bullet")
@@ -29,6 +30,7 @@ public class BulletLogic : MonoBehaviour
     private void OnDestroy() {
         var expl = Instantiate(exploseParticle, transform.position, Quaternion.identity);
         expl.GetComponent<ParticleSystem>().Play();
+        GetComponent<AudioSource>().PlayOneShot(explosionSound);
         Destroy(expl, 1f);
     }
   

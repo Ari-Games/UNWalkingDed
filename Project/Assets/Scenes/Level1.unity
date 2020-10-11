@@ -28326,7 +28326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3400850146332941568, guid: d7356888f53aa0b419484537321464b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -224.01001
+      value: -224.01025
       objectReference: {fileID: 0}
     - target: {fileID: 3400850146332941568, guid: d7356888f53aa0b419484537321464b6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -28542,6 +28542,7 @@ MonoBehaviour:
   offSound: {fileID: 21300000, guid: f4877361b6507457d80b5102839b4cdb, type: 3}
   onSound: {fileID: 21300000, guid: aebe8973df4444fb096d979f24b536bf, type: 3}
   playSound: {fileID: 364447376}
+  clipClick: {fileID: 8300000, guid: 26d6e0b19bee64f4c8a58bd4f5489b08, type: 3}
 --- !u!82 &640408916
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28554,7 +28555,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: b7af2dc6e8d5836428dd14552e3462ae, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9246468566e3bde4f9a8a51972e9150c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.496
   m_Pitch: 1
   Loop: 1
   Mute: 0

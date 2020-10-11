@@ -13,7 +13,7 @@ namespace Assets.Scripts
         [SerializeField] private Sprite onSound;
         [SerializeField] private Button playSound;
         private bool isSoundPlay = true;
-
+        [SerializeField] private AudioClip clipClick;
         private void OffMixer()
         {
             isSoundPlay = false;
@@ -45,26 +45,31 @@ namespace Assets.Scripts
                 OffMixer();
             else
                 OnMixer();
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
         }
 
         public void Repeat()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             SceneManager.LoadScene(1);
         }
 
         public void ToMenu()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             SceneManager.LoadScene(0);
         }
 
         public void PlayContinue()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             panelPause.SetActive(false);
             
         }
 
         public void OpenPause()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             panelPause.SetActive(true);
             
         

@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
 
         [SerializeField] private Text textCoins;
+        [SerializeField] private AudioClip clipClick;
 
         void Start()
         {
@@ -17,6 +18,7 @@ namespace Assets.Scripts
 
         public void ExitFromScene()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             SceneManager.LoadScene(0);
         }
     }

@@ -7,6 +7,7 @@ public class WaveExplosion : MonoBehaviour
 {
     [SerializeField] private float timeExplosion;
     [SerializeField] private GameObject coin = null;
+
     public void Start()
     {
         transform.localScale = new Vector3(3, 3, 1);
