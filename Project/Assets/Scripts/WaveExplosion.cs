@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WaveExplosion : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class WaveExplosion : MonoBehaviour
         if (collision.gameObject.tag == "Zombie" || collision.gameObject.tag == "FatZombie")
         {
             collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("kill");
+            collision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+            if(collision.gameObject.tag == "Zombie")
+            {
+                collision.gameObject.GetComponent<Flocking.Flock>().enabled = false;
+            }
             Destroy(collision.gameObject,4f);
             if(Random.Range(1,4)==1)
                 Instantiate(coin,transform.position,Quaternion.identity);

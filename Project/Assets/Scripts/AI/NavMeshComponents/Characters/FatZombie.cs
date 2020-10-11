@@ -18,6 +18,8 @@ public class FatZombie : MonoBehaviour
     Animator zombieInst;
 
     public float health = 25f;
+
+    bool isAttacked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,25 +39,26 @@ public class FatZombie : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
-        if(health <= 0)
+        if(health <= 0 && !isAttacked)
         {
-            ExplosionDead();
+            StartCoroutine(ExplosionDead());
         }
-        else if(Vector2.Distance(transform.position, target.position) < 1f)
+        else if(Vector2.Distance(transform.position, target.position) < 1f && !isAttacked)
         {
-            ExplosionDead();
+            StartCoroutine(ExplosionDead());
         }
     }
-    
-    void ExplosionDead()
+
+    IEnumerator ExplosionDead()
     {
-        //TODO
-        //Call Particle effect and hit player if in area
-        if(Vector2.Distance(transform.position, target.position) <2f)
-            target.GetComponent<Ded>().TakeDamage(3);
+        isAttacked = true;
+        if (Vector2.Distance(transform.position, target.position) < 2f)
+            target.GetComponent<Ded>().TakeDamage(35);
         Destroy(gameObject, timeToExplosion);
         agent.isStopped = true;
         zombieInst.SetTrigger("kill");
+        yield return new WaitForSeconds(1f);
+        isAttacked = false;
     }
 }
 

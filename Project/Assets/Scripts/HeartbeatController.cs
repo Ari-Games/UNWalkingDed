@@ -22,7 +22,7 @@ public class HeartbeatController : MonoBehaviour
 
     public int resolution;
 
-    public int heartRate;
+    int heartRate;
 
     public float flatLineLength;
     private List<Vector2> points;
@@ -50,8 +50,12 @@ public class HeartbeatController : MonoBehaviour
 
     float padding = 1;
 
+    [SerializeField]
+    private Ded player;
+
     void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Ded>();
         UILineRenderer.color = lineColour;
         UILineRenderer.LineThickness = lineWidth;
         points = new List<Vector2>();
@@ -77,6 +81,7 @@ public class HeartbeatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        heartRate = player.Health;
         flatLineLength = 400f / (float)heartRate;
         if(!beatFlag)
             StartCoroutine("Beat");
