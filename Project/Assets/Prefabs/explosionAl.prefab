@@ -116,7 +116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeExplosion: 0.2
   coin: {fileID: 4276081969740185771, guid: 98b75d2bb4d794d449e5b0bb6931e67d, type: 3}
-  explosionSound: {fileID: 8300000, guid: f92140763a49d30409a069e4374c2693, type: 3}
 --- !u!50 &4082430507550368209
 Rigidbody2D:
   serializedVersion: 4
@@ -5774,7 +5773,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 150
+    maxNumParticles: 20
     size3D: 0
     rotation3D: 0
     gravityModifier:
