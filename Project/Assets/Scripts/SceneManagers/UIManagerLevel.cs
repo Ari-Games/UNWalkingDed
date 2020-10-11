@@ -14,8 +14,6 @@ namespace Assets.Scripts
         [SerializeField] private Sprite onSound;
         [SerializeField] private Button playSound;
         [SerializeField] private GameObject player;
-        [SerializeField] private NavMeshData navMeshData;
-        [SerializeField] private NavMeshSurface2d surface2D;
         
         private bool isSoundPlay = true;
         
@@ -45,8 +43,6 @@ namespace Assets.Scripts
                 OffMixer();
             else if( PlayerPrefs.GetInt("Sound") == 1)
                 OnMixer();
-
-//            surface2D.navMeshData = navMeshData;
         }
 
         public void ChangePlaySound()

@@ -70831,6 +70831,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4310611377736975594, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 6059507307883549636, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
       propertyPath: player
       value: 
@@ -70843,6 +70847,18 @@ PrefabInstance:
       propertyPath: surface2D
       value: 
       objectReference: {fileID: 3457241673074555088}
+    - target: {fileID: 6059507308410625178, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059507309076288105, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274039654333661017, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 8873655846459396592, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
       propertyPath: m_Name
       value: Canvas UI
@@ -71058,7 +71074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913602368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94487166, y: 4.5859365, z: -57}
+  m_LocalPosition: {x: 0.94487166, y: 4.5859365, z: -71.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 219835796}
@@ -72023,6 +72039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375948133}
   - component: {fileID: 1375948132}
+  - component: {fileID: 1375948134}
   m_Layer: 0
   m_Name: Domik_3
   m_TagString: Untagged
@@ -72095,6 +72112,32 @@ Transform:
   m_Father: {fileID: 1629346641}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1375948134
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375948131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.02, y: 15.02}
+    newSize: {x: 15.02, y: 15.02}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.02, y: 15.02}
+  m_EdgeRadius: 0
 --- !u!1 &1397133124
 GameObject:
   m_ObjectHideFlags: 0
@@ -74086,7 +74129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629346640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94487166, y: 4.5859365, z: -56.18}
+  m_LocalPosition: {x: 0.94487166, y: 4.5859365, z: -71.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2047849037}
