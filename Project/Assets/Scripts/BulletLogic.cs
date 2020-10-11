@@ -12,6 +12,8 @@ public class BulletLogic : MonoBehaviour
         if (!GetComponent<AudioSource>().isPlaying)
             GetComponent<AudioSource>().Play();
     }
+
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" || collision.tag == "Bullet")
