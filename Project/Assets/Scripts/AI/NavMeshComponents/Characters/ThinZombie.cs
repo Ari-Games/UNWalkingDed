@@ -11,6 +11,11 @@ public class ThinZombie : MonoBehaviour
     [SerializeField]
     float distanceToHit = 1.5f;
 
+    float timer = 0f;
+    
+    [SerializeField]
+    float timeToHit = 1f;
+
     [SerializeField]
     Animator zombieInst;
 
@@ -24,8 +29,12 @@ public class ThinZombie : MonoBehaviour
     {
         if(Vector2.Distance(transform.position,target.position) < distanceToHit)
         {
-            
-            target.GetComponent<Ded>().TakeDamage(3);
+            timer += Time.deltaTime;
+            if(timer >= timeToHit)
+            {
+                target.GetComponent<Ded>().TakeDamage(3);
+                timer = 0;
+            }
             print("Hit");
         }
     }

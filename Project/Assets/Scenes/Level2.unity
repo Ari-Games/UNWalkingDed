@@ -70831,34 +70831,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4310611377736975594, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -100
-      objectReference: {fileID: 0}
     - target: {fileID: 6059507307883549636, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1841205171}
-    - target: {fileID: 6059507307883549636, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: navMeshData
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6059507307883549636, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: surface2D
-      value: 
-      objectReference: {fileID: 3457241673074555088}
-    - target: {fileID: 6059507308410625178, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6059507309076288105, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274039654333661017, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -100
-      objectReference: {fileID: 0}
     - target: {fileID: 8873655846459396592, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
       propertyPath: m_Name
       value: Canvas UI
