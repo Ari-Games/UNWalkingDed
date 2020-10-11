@@ -38,7 +38,6 @@ namespace Assets.Scripts
         private void Start()
         {
             player = GameObject.FindWithTag("Player");
-            // player.GetComponent<MoveController>().enabled = true;
             Time.timeScale = 1;
             if (PlayerPrefs.GetInt("Sound") == 0)
                 OffMixer();
