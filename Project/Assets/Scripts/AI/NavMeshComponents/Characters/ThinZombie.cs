@@ -19,6 +19,9 @@ public class ThinZombie : MonoBehaviour
     [SerializeField]
     Animator zombieInst;
 
+    [SerializeField]
+    int damage = 1;
+
     private void Start() {
 
         if(target == null)
@@ -32,10 +35,9 @@ public class ThinZombie : MonoBehaviour
             timer += Time.deltaTime;
             if(timer >= timeToHit)
             {
-                target.GetComponent<Ded>().TakeDamage(3);
+                target.GetComponent<Ded>().TakeDamage(damage);
                 timer = 0;
             }
-            print("Hit");
         }
     }
 
@@ -46,7 +48,7 @@ public class ThinZombie : MonoBehaviour
         zombieInst.SetTrigger("kill");
         Destroy(GetComponent<NavMeshAgent>());// = true;
         GetComponent<Flocking.Flock>().enabled = false;
-        Debug.Log("AAAAAAAAAAAAA");
+        // Debug.Log("AAAAAAAAAAAAA");
         Destroy(gameObject, 5f);
        
        
