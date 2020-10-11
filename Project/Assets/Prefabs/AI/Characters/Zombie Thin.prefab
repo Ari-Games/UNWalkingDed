@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   target: {fileID: 0}
-  distanceToHit: 1
+  distanceToHit: 1.5
   zombieInst: {fileID: 0}
 --- !u!1001 &373958759991373626
 PrefabInstance:

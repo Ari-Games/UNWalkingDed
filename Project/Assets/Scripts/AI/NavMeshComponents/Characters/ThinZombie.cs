@@ -9,7 +9,7 @@ public class ThinZombie : MonoBehaviour
     Transform target = null;
 
     [SerializeField]
-    float distanceToHit = 1f;
+    float distanceToHit = 1.5f;
 
     [SerializeField]
     Animator zombieInst;

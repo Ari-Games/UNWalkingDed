@@ -9,7 +9,7 @@ public class Dirt : MonoBehaviour
 
 
     [SerializeField]
-    int normalWeight = 10;
+    int normalWeight = 20;
 
 
     private void OnTriggerEnter2D(Collider2D other) 
