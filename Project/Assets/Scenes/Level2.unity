@@ -172,7 +172,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.17, y: 9.45}
+    oldSize: {x: 14.188856, y: 9.45}
     newSize: {x: 14.17, y: 9.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -496,6 +496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6938426135214615587, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
+      propertyPath: explSound
+      value: 
+      objectReference: {fileID: 2030445401}
     - target: {fileID: 6938426135214615588, guid: ae0ae82082e6a734da6e32ce388fb98e, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -70944,6 +70948,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1841205171}
+    - target: {fileID: 8873655846048550599, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -224.00977
+      objectReference: {fileID: 0}
     - target: {fileID: 8873655846459396592, guid: 11fbad2b8d4d4a34a8105f74d4247223, type: 3}
       propertyPath: m_Name
       value: Canvas UI
@@ -71750,7 +71758,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.17, y: 9.45}
+    oldSize: {x: 14.188856, y: 9.45}
     newSize: {x: 14.17, y: 9.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -72218,7 +72226,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.02, y: 15.02}
+    oldSize: {x: 15.0199995, y: 15.0199995}
     newSize: {x: 15.02, y: 15.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -96945,6 +96953,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7145632185517903543, guid: 85b11ecd00e6b5443bfd6228c9d4c14e, type: 3}
   m_PrefabInstance: {fileID: 2023565426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2030445400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 324386583516337835, guid: 0191b4e8596fa0341804f4fdcd240c19, type: 3}
+  m_PrefabInstance: {fileID: 1153776840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2030445401
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030445400}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -660611476692739521, guid: b7af2dc6e8d5836428dd14552e3462ae, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2c1b93dcc98a9954cb2f2e78be52668f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2047849036
 GameObject:
   m_ObjectHideFlags: 0

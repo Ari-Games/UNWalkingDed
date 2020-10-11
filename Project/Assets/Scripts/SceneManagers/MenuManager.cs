@@ -37,6 +37,8 @@ namespace Assets.Scripts
         }
         private void Start()
         {
+            if (PlayerPrefs.GetInt("Money") >= 1000)
+                PlayerPrefs.SetInt("Money", 0);
             textCoins.text = PlayerPrefs.GetInt("Money").ToString();
             if (PlayerPrefs.GetInt("Sound") == 0)
                 OffMixer();
