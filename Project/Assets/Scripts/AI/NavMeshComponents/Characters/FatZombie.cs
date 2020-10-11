@@ -38,8 +38,11 @@ public class FatZombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(agent.enabled)
+        if(agent.enabled && target)
+        {
             agent.SetDestination(target.position);
+            RotateToTarget();
+        }
         if(health <= 0 && !isAttacked || Vector2.Distance(transform.position, target.position) < 1.5f && !isAttacked)
         {
             StartCoroutine(ExplosionDead());
@@ -47,6 +50,12 @@ public class FatZombie : MonoBehaviour
 
     }
 
+    private void RotateToTarget()
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, angle - 90), Time.deltaTime * 5);
+    }
     IEnumerator ExplosionDead()
     {
         isAttacked = true;
