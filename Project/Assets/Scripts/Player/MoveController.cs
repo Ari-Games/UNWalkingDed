@@ -20,15 +20,20 @@ public class MoveController : MonoBehaviour
     [SerializeField] GameObject heroSprite;
     [SerializeField] Transform aim;
     [SerializeField] private AudioSource explSound;
+
+    float timer = 0.4f;
+    [SerializeField]
+    float timeToShoot = 0.4f;
     private void Start()
     {
+        Mathf.Clamp(timer,0,timeToShoot);
         _animation = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
     
     private void Update()
     {
-        
+        timer += Time.deltaTime;
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         if (_flag)
@@ -49,8 +54,9 @@ public class MoveController : MonoBehaviour
             aim.gameObject.SetActive(true);
 
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && timer >= timeToShoot)
         {
+            timer = 0;
             _animation.SetTrigger("shoot");
             _to = mousePos;
             _flag = false;
