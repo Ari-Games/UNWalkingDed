@@ -223,7 +223,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.02, y: 15.02}
+    oldSize: {x: 15.0199995, y: 15.0199995}
     newSize: {x: 15.02, y: 15.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -27228,7 +27228,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.17, y: 9.45}
+    oldSize: {x: 14.17, y: 9.45128}
     newSize: {x: 14.17, y: 9.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -28165,7 +28165,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.17, y: 9.45}
+    oldSize: {x: 14.17, y: 9.45128}
     newSize: {x: 14.17, y: 9.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -31554,8 +31554,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: b7af2dc6e8d5836428dd14552e3462ae, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 7a2a1c2c388e65d42ba08f7b2c100ef1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

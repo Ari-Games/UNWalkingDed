@@ -63,6 +63,7 @@ public class MoveController : MonoBehaviour
     private void FireByDirection(Vector2 direction)
     {
         var bulletInstance = Instantiate(bullet,transform.position,Quaternion.identity);
+        StartCoroutine(PlaySwist());
         //bulletInstance.transform.LookAt(direction);
         ///////////////////////////////
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -74,5 +75,11 @@ public class MoveController : MonoBehaviour
         bulletInstance.AddForce(direction * 100);
         Destroy(bulletInstance.gameObject,0.5f );
         
+    }
+
+    IEnumerator PlaySwist()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
     }
 }
