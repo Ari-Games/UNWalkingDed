@@ -5,21 +5,18 @@ using UnityEngine;
 public class Ded : MonoBehaviour
 {
     [SerializeField]
-    private int health = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int health = 70;
 
+    public int Health
+    {
+        get{return health;}
+    }
     // Update is called once per frame
     void Update()
     {
         if(health <= 0)
         {
-            //TODO
-            //GameOver Scene
-            GetComponent<MoveController>().enabled = false;
+            GameObject.FindWithTag("Manager").GetComponent<GameManager>().TheEnd();
         }
     }
 

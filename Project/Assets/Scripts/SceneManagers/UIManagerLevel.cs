@@ -60,11 +60,13 @@ namespace Assets.Scripts
         public void PlayContinue()
         {
             panelPause.SetActive(false);
+            
         }
 
         public void OpenPause()
         {
             panelPause.SetActive(true);
+            
         
         }
     }

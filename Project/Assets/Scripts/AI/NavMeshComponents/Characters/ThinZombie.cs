@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ThinZombie : MonoBehaviour 
 {
@@ -12,6 +13,7 @@ public class ThinZombie : MonoBehaviour
 
     [SerializeField]
     Animator zombieInst;
+
     private void Start() {
 
         if(target == null)
@@ -22,9 +24,8 @@ public class ThinZombie : MonoBehaviour
     {
         if(Vector2.Distance(transform.position,target.position) < distanceToHit)
         {
-            //TODO 
-            //Play Animation
-            //target.GetComponent<somth>().makeDamage;
+            
+            target.GetComponent<Ded>().TakeDamage(3);
             print("Hit");
         }
     }
@@ -34,7 +35,12 @@ public class ThinZombie : MonoBehaviour
         //TODO 
         //Particle effect of Blood
         zombieInst.SetTrigger("kill");
+        Destroy(GetComponent<NavMeshAgent>());// = true;
+        GetComponent<Flocking.Flock>().enabled = false;
+        Debug.Log("AAAAAAAAAAAAA");
         Destroy(gameObject, 5f);
+       
+       
     }
     
 }   
