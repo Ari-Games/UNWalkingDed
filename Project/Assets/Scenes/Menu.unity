@@ -227,6 +227,7 @@ MonoBehaviour:
   onSpriteSound: {fileID: 21300000, guid: aebe8973df4444fb096d979f24b536bf, type: 3}
   textCoins: {fileID: 2116760180}
   shop: {fileID: 1539946132}
+  clipClick: {fileID: 8300000, guid: 26d6e0b19bee64f4c8a58bd4f5489b08, type: 3}
 --- !u!82 &12282407
 AudioSource:
   m_ObjectHideFlags: 0

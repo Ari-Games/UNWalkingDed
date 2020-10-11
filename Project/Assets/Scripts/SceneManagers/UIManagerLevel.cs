@@ -14,20 +14,37 @@ namespace Assets.Scripts
         [SerializeField] private Button playSound;
         private bool isSoundPlay = true;
 
+        private void OffMixer()
+        {
+            isSoundPlay = false;
+            playSound.image.sprite = offSound;
+            mixer.OffAll();
+            PlayerPrefs.SetInt("Sound", 0);
+            PlayerPrefs.Save();
+        }
+
+        private void OnMixer()
+        {
+            isSoundPlay = true;
+            playSound.image.sprite = onSound;
+            mixer.OnAll();
+            PlayerPrefs.SetInt("Sound", 1);
+            PlayerPrefs.Save();
+        }
+        private void Start()
+        {
+            if (PlayerPrefs.GetInt("Sound") == 0)
+                OffMixer();
+            else if( PlayerPrefs.GetInt("Sound") == 1)
+                OnMixer();
+        }
+
         public void ChangePlaySound()
         {
             if (isSoundPlay)
-            {
-                isSoundPlay = false;
-                playSound.image.sprite = offSound;
-                mixer.OffAll();
-            }
+                OffMixer();
             else
-            {
-                isSoundPlay = true;
-                playSound.image.sprite = onSound;
-                mixer.OnAll();
-            }
+                OnMixer();
         }
 
         public void Repeat()

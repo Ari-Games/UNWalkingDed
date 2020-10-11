@@ -14,41 +14,60 @@ namespace Assets.Scripts
         [SerializeField] private Sprite onSpriteSound;
         [SerializeField] private Text textCoins;
         [SerializeField] private GameObject shop;
-        private bool isPlaySound = true;
 
+        [SerializeField] private AudioClip clipClick;
+
+        private bool isPlaySound = true;
+        private void OffMixer()
+        {
+            isPlaySound = false;
+            sound.image.sprite = offSpriteSound;
+            mixer.OffAll();
+            PlayerPrefs.SetInt("Sound", 0);
+            PlayerPrefs.Save();
+        }
+
+        private void OnMixer()
+        {
+            isPlaySound = true;
+            sound.image.sprite = onSpriteSound;
+            mixer.OnAll();
+            PlayerPrefs.SetInt("Sound", 1);
+            PlayerPrefs.Save();
+        }
         private void Start()
         {
             textCoins.text = PlayerPrefs.GetInt("Money").ToString();
+            if (PlayerPrefs.GetInt("Sound") == 0)
+                OffMixer();
+            else if (PlayerPrefs.GetInt("Sound") == 1)
+                OnMixer();
         }
 
         public void ChangeStateSound()
         {
             if (isPlaySound)
-            {
-                sound.image.sprite = offSpriteSound;
-                isPlaySound = false;
-                mixer.OffAll();
-            }
+                OffMixer();
             else
-            {
-                sound.image.sprite = onSpriteSound;
-                isPlaySound = true;
-                mixer.OnAll();
-            }
+                OnMixer();
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
         }
 
         public void Play()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             SceneManager.LoadScene(1);
         }
 
         public void ToShop()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             shop.SetActive(true);
         }
 
         public void ToBack()
         {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
             shop.SetActive(false);
         }
     }
