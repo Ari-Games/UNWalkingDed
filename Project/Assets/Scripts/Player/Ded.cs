@@ -11,6 +11,7 @@ public class Ded : MonoBehaviour
     {
         get{return health;}
     }
+   
     // Update is called once per frame
     void Update()
     {
@@ -23,5 +24,8 @@ public class Ded : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if(health < 0)
+            health = 0;
+        // Mathf.Clamp(health,health)
     }
 }

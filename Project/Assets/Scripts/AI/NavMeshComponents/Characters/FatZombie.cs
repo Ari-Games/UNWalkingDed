@@ -38,15 +38,13 @@ public class FatZombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
-        if(health <= 0 && !isAttacked)
+        if(agent.enabled)
+            agent.SetDestination(target.position);
+        if(health <= 0 && !isAttacked || Vector2.Distance(transform.position, target.position) < 1.5f && !isAttacked)
         {
             StartCoroutine(ExplosionDead());
         }
-        else if(Vector2.Distance(transform.position, target.position) < 1f && !isAttacked)
-        {
-            StartCoroutine(ExplosionDead());
-        }
+
     }
 
     IEnumerator ExplosionDead()

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 namespace Assets.Scripts
 {
@@ -12,8 +13,11 @@ namespace Assets.Scripts
         [SerializeField] private Sprite offSound;
         [SerializeField] private Sprite onSound;
         [SerializeField] private Button playSound;
+        [SerializeField] private GameObject player;
+        
         private bool isSoundPlay = true;
         [SerializeField] private AudioClip clipClick;
+
         private void OffMixer()
         {
             isSoundPlay = false;
@@ -33,6 +37,9 @@ namespace Assets.Scripts
         }
         private void Start()
         {
+            player = GameObject.FindWithTag("Player");
+            // player.GetComponent<MoveController>().enabled = true;
+            Time.timeScale = 1;
             if (PlayerPrefs.GetInt("Sound") == 0)
                 OffMixer();
             else if( PlayerPrefs.GetInt("Sound") == 1)
@@ -64,12 +71,17 @@ namespace Assets.Scripts
         {
             GetComponent<AudioSource>().PlayOneShot(clipClick);
             panelPause.SetActive(false);
+            player.GetComponent<MoveController>().enabled = true;
+
+            Time.timeScale = 1;
             
         }
 
         public void OpenPause()
         {
             GetComponent<AudioSource>().PlayOneShot(clipClick);
+            Time.timeScale = 0;
+            player.GetComponent<MoveController>().enabled = false;
             panelPause.SetActive(true);
             
         
