@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,9 +32,9 @@ public class BulletLogic : MonoBehaviour
         {
             return;
         }
+        
         var splash = Instantiate(bloodSplash.gameObject, collision.transform);
-        splash.GetComponent<ParticleSystem>().Play();
-
+        splash.GetComponent<ParticleSystem>().Play();        
         Debug.Log("EXPLOSE");
         Destroy(splash, 0.5f);
         Destroy(this.gameObject);
@@ -42,7 +43,9 @@ public class BulletLogic : MonoBehaviour
     private void OnDestroy() {
         var expl = Instantiate(exploseParticle, transform.position, Quaternion.identity);
         expl.GetComponent<ParticleSystem>().Play();
-        Destroy(expl, 1f);
+
+        Destroy(expl.gameObject, 1f);
     }
-  
+
+    
 }
