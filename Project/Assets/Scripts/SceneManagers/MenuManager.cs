@@ -53,12 +53,16 @@ namespace Assets.Scripts
             GetComponent<AudioSource>().PlayOneShot(clipClick);
         }
 
-        public void Play()
+        public void PlayLevel1()
         {
             GetComponent<AudioSource>().PlayOneShot(clipClick);
             SceneManager.LoadScene(1);
         }
-
+        public void PlayLevel2()
+        {
+            GetComponent<AudioSource>().PlayOneShot(clipClick);
+            SceneManager.LoadScene(3);
+        }
         public void ToShop()
         {
             GetComponent<AudioSource>().PlayOneShot(clipClick);
